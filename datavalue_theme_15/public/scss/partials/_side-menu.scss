@@ -1,8 +1,6 @@
 .side-menu {
   background: #ffffff;
-  /* border-right: 1px solid #ddd; */
-  //box-shadow: var(--card-shadow);
-  border-right: 1px solid #e6e6e6;
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
   width: 340px;
   position: fixed;
   left: 0px;
@@ -10,11 +8,11 @@
   bottom: 0px;
   overflow: hidden;
   z-index: 250;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   .modules-menu {
     background: #ffffff;
-    box-shadow: var(--card-shadow);
+    box-shadow: $shadow-xl;
     position: absolute;
     width: 340px;
     top: 0px;
@@ -25,33 +23,34 @@
 
     h4 {
       margin: 0px;
-      font-size: 18px;
+      font-size: 16px;
+      font-weight: 700;
     }
 
     .modules-menu-list {
-      margin: 15px 20px;
+      margin: 15px 16px;
 
       a {
         border: 1px solid transparent;
         display: block;
         margin: 0px;
-        padding: 0px 5px 0px 10px;
-        font-size: 14px;
-        height: 40px;
-        line-height: 40px;
+        padding: 0px 10px;
+        font-size: 13px;
+        height: 38px;
+        line-height: 38px;
         font-weight: 600;
-        color: var(--blue-900);
+        color: #334155;
         overflow: hidden;
-        border-radius: 4px;
+        border-radius: $radius-md;
         word-break: break-all;
         text-overflow: ellipsis;
         white-space: nowrap;
-        transition: all 0.2s ease-in;
+        transition: all $transition-fast;
 
         i {
-          font-size: 17px;
+          font-size: 16px;
           font-weight: 300;
-          margin-right: 2px;
+          margin-right: 4px;
 
           &.fal {
             position: relative;
@@ -65,12 +64,12 @@
         }
 
         &:hover {
-          box-shadow: 0px 0px 8px -3px #00000059;
-          border-color: #e6e6e6;
+          background: #f1f5f9;
           color: var(--primary);
         }
 
         &.active {
+          background: rgba(var(--primary), 0.06);
           color: var(--primary);
           font-weight: 700;
         }
@@ -79,8 +78,8 @@
   }
 
   .side-menu-icons {
-    border-right: 1px solid #e6e6e6;
-    width: 80px;
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+    width: 76px;
     position: absolute;
     top: 0px;
     bottom: 0px;
@@ -92,10 +91,10 @@
       right: 0px;
       left: 0px;
       bottom: 0px;
-      margin: 5px 0px 15px 0px;
+      margin: 8px 0px 15px 0px;
 
       > li {
-        margin: 10px 15px;
+        margin: 6px 13px;
         display: block;
 
         > a {
@@ -103,12 +102,12 @@
           width: 50px;
           height: 50px;
           line-height: 50px;
-          font-size: 24px;
-          color: var(--blue-900);
+          font-size: 22px;
+          color: #475569;
           display: block;
           text-align: center;
-          border-radius: 5px;
-          transition: all 0.2s ease-in-out;
+          border-radius: $radius-md;
+          transition: all $transition-fast;
 
           i.fal {
             position: relative;
@@ -121,8 +120,7 @@
           }
 
           &:hover {
-            background: #f7f9fe;
-            border-color: var(--primary);
+            background: #f1f5f9;
             color: var(--primary);
           }
         }
@@ -130,8 +128,9 @@
         &.active {
           > a {
             background: var(--primary);
-            box-shadow: 0px 1px 8px -2px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 2px 8px rgba(var(--primary), 0.3);
             color: #ffffff;
+            border-radius: $radius-md;
           }
         }
       }
@@ -144,30 +143,31 @@
             width: auto;
             height: auto;
             line-height: inherit;
-            font-size: 14px;
-            transition: all 0.2s ease-in-out;
+            font-size: 13px;
+            transition: all $transition-fast;
 
             > div {
               border: 1px solid transparent;
-              width: 50px;
-              height: 50px;
+              width: 48px;
+              height: 48px;
               display: block;
-              line-height: 50px;
-              font-size: 24px;
+              line-height: 48px;
+              font-size: 22px;
               margin: 0px;
-              color: var(--blue-900);
-              border-radius: 5px;
+              color: #475569;
+              border-radius: $radius-md;
               overflow: hidden;
-              transition: all 0.2s ease-in-out;
+              transition: all $transition-fast;
             }
 
             > span {
               display: block;
               text-align: center;
-              font-size: 12px;
+              font-size: 11px;
               overflow: hidden;
               text-overflow: ellipsis;
-              margin: 5px -6px 0px -5px;
+              margin: 4px -6px 0px -5px;
+              color: #64748b;
             }
 
             &:hover {
@@ -176,8 +176,11 @@
               color: var(--primary);
 
               > div {
-                background: #f7f9fe;
-                border-color: var(--primary);
+                background: #f1f5f9;
+                color: var(--primary);
+              }
+
+              > span {
                 color: var(--primary);
               }
             }
@@ -191,8 +194,12 @@
 
               > div {
                 background: var(--primary);
-                box-shadow: 0px 1px 8px -2px rgba(0, 0, 0, 0.25);
                 color: #ffffff;
+              }
+
+              > span {
+                color: var(--primary);
+                font-weight: 600;
               }
             }
           }
@@ -202,38 +209,39 @@
   }
 
   .side-menu-items {
-    width: 260px;
+    width: 264px;
     position: absolute;
     top: 0px;
     bottom: 0px;
-    left: 80px;
+    left: 76px;
 
     .side-menu-search {
-      padding: 0px 15px;
+      padding: 0px 14px;
       position: relative;
 
       .form-control {
         padding-left: 30px;
+        border-radius: $radius-md;
       }
 
       i.fa-search {
         position: absolute;
-        left: 31px;
+        left: 28px;
         top: 10px;
         font-size: 12px;
-        color: #aaa;
+        color: #94a3b8;
       }
     }
 
     .side-menu-tabs {
-      margin-top: 15px;
+      margin-top: 12px;
       padding: 0px;
       position: relative;
 
       > ul {
         margin: 0px;
-        padding: 0px 15px;
-        border-bottom: 1px solid #dddddd;
+        padding: 0px 14px;
+        border-bottom: 1px solid #e2e8f0;
         height: 38px;
         list-style: none;
 
@@ -247,29 +255,29 @@
             display: block;
             height: 38px;
             line-height: 38px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
-            padding: 0px 15px;
-            color: #666666;
-            border-radius: 6px 6px 0px 0px;
-            transition: all 0.2s ease-in-out;
+            padding: 0px 14px;
+            color: #64748b;
+            border-radius: $radius-md $radius-md 0px 0px;
+            transition: all $transition-fast;
 
             > i {
-              font-size: 14px;
+              font-size: 13px;
             }
 
             &:hover {
-              color: #333333;
+              color: #1e293b;
             }
           }
 
           &.active {
             > a {
               background: #ffffff;
-              border-top-color: #dddddd;
-              border-right-color: #dddddd;
-              border-left-color: #dddddd;
-              color: var(--primary-hover);
+              border-top-color: #e2e8f0;
+              border-right-color: #e2e8f0;
+              border-left-color: #e2e8f0;
+              color: var(--primary);
             }
           }
         }
@@ -289,22 +297,22 @@
 
         > a {
           padding: 0px;
-          margin: 0px 15px 0px 20px;
-          transition: all 0.2s ease-in-out;
+          margin: 0px 14px 0px 18px;
+          transition: all $transition-fast;
           height: auto;
           line-height: initial;
           white-space: nowrap;
           overflow: hidden;
-          font-size: 14px;
-          font-weight: 600;
-          color: #555;
+          font-size: 13px;
+          font-weight: 500;
+          color: #475569;
           text-overflow: ellipsis;
           max-width: 100%;
           display: block;
           text-decoration: none;
 
           &:before {
-            background: #999999;
+            background: #cbd5e1;
             width: 5px;
             height: 5px;
             display: inline-block;
@@ -314,7 +322,7 @@
             position: relative;
             top: -3px;
             border-radius: 50%;
-            transition: all 0.2s ease-in-out;
+            transition: all $transition-fast;
           }
 
           &:hover {
@@ -328,10 +336,6 @@
         }
 
         &.active {
-          //> a {
-          //  color: var(--primary);
-          //  font-weight: 600;
-          //}
         }
       }
     }
@@ -344,13 +348,14 @@
         margin: 0px;
 
         &.navigation-divider {
-          padding: 10px 20px;
+          padding: 10px 18px;
           text-transform: uppercase;
-          font-size: 16px;
+          font-size: 11px;
           letter-spacing: 0.5px;
           margin-top: 10px;
-          margin-bottom: 10px;
-          color: #666666;
+          margin-bottom: 6px;
+          color: #94a3b8;
+          font-weight: 700;
 
           .btn-edit-menu {
             width: 28px;
@@ -370,9 +375,9 @@
 
             .sub-menu-icon {
               margin-right: 5px;
-              font-size: 18px;
+              font-size: 16px;
               position: relative;
-              opacity: 0.8;
+              opacity: 0.7;
               top: 1px;
             }
           }
@@ -389,28 +394,35 @@
 
         > li {
           > a {
-            background: #f3f6fdb3;
-            border: 1px solid #d1d3d8;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
             display: block;
-            margin: 0px 15px 10px 15px;
-            padding: 8px 15px;
-            color: #666;
-            overflow: hidden;;
-            font-size: 14px;
+            margin: 0px 14px 8px 14px;
+            padding: 8px 14px;
+            color: #475569;
+            overflow: hidden;
+            font-size: 13px;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.2s ease-in-out;
+            border-radius: $radius-md;
+            transition: all $transition-fast;
 
             > i {
               float: right;
               font-size: 12px;
               margin-top: 5px;
+              opacity: 0.5;
             }
 
             &:hover {
+              background: #ffffff;
               border-color: var(--primary);
               color: var(--primary);
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+
+              > i {
+                opacity: 1;
+              }
             }
           }
 
@@ -418,6 +430,7 @@
             > a {
               border-color: var(--primary);
               color: var(--primary);
+              background: rgba(37, 99, 235, 0.04);
             }
           }
         }
@@ -433,29 +446,31 @@
 
         > li {
           > a {
-            background: #f3f6fdb3;
-            border: 1px solid #d1d3d8;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
             display: block;
-            margin: 0px 15px 10px 15px;
-            padding: 8px 15px;
-            color: #666;
-            font-size: 14px;
+            margin: 0px 14px 8px 14px;
+            padding: 9px 14px;
+            color: #475569;
+            font-size: 13px;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.2s ease-in-out;
+            border-radius: $radius-md;
+            transition: all $transition-fast;
 
             .sub-menu-arrow {
               float: right;
-              margin: 3px 0px;
-              font-size: 16px;
-              color: #aaa;
-              transition: all 0.2s ease-in-out;
+              margin: 2px 0px;
+              font-size: 14px;
+              color: #94a3b8;
+              transition: all $transition-fast;
             }
 
             &:hover {
+              background: #ffffff;
               border-color: var(--primary);
               color: var(--primary);
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 
               .sub-menu-arrow {
                 color: var(--primary);
@@ -464,7 +479,7 @@
           }
 
           > ul {
-            margin: 0px 0px 15px 0px;
+            margin: 0px 0px 12px 0px;
             padding: 0px;
             display: none;
 
@@ -473,8 +488,8 @@
 
               > a {
                 padding: 0px;
-                margin: 0px 15px 5px 30px;
-                transition: all 0.2s ease-in-out;
+                margin: 0px 14px 4px 28px;
+                transition: all $transition-fast;
                 height: auto;
                 line-height: initial;
                 white-space: nowrap;
@@ -483,19 +498,26 @@
                 max-width: 100%;
                 display: block;
                 text-decoration: none;
+                font-size: 13px;
+                color: #64748b;
 
                 &:before {
                   display: inline-block;
-                  content: '-';
+                  content: '';
+                  width: 4px;
+                  height: 4px;
+                  background: #cbd5e1;
+                  border-radius: 50%;
                   font-weight: 400;
-                  margin: 0px 6px 0px 0px;
-                  transition: all 0.2s ease-in-out;
+                  margin: 0px 8px 2px 0px;
+                  transition: all $transition-fast;
                 }
 
                 &:hover {
                   color: var(--primary);
 
                   &:before {
+                    background: var(--primary);
                     margin-right: 12px;
                   }
                 }
@@ -503,8 +525,8 @@
 
               &.active {
                 > a {
-                  color: var(--blue-700);
-                  font-weight: 700;
+                  color: var(--primary);
+                  font-weight: 600;
                 }
               }
             }
@@ -515,6 +537,7 @@
               background: var(--primary);
               border-color: var(--primary);
               color: #ffffff;
+              box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
 
               .sub-menu-arrow {
                 color: #ffffff;
@@ -539,7 +562,7 @@
 
 .side-mobile-menu {
   background: #ffffff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: $shadow-xl;
   width: 280px;
   position: fixed;
   left: 0px;
@@ -547,6 +570,7 @@
   bottom: 0px;
   overflow: auto;
   display: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
 
   > ul.mobile-modules-list {
     margin: 10px 0px;
@@ -559,18 +583,16 @@
         border: 1px solid transparent;
         height: 40px;
         line-height: 40px;
-        font-size: 16px;
-        color: #30434f;
+        font-size: 14px;
+        color: #334155;
         display: block;
-        border-radius: 5px;
+        border-radius: $radius-md;
         padding: 0px 10px;
-        border-radius: 5px;
-        transition: all 0.2s ease-in-out;
+        transition: all $transition-fast;
 
         &:active, &:focus {
           background: var(--primary);
           border-color: var(--primary);
-          box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.25);
           color: #ffffff $imp;
         }
       }
@@ -579,7 +601,6 @@
         > a {
           background: var(--primary);
           border-color: var(--primary);
-          box-shadow: 0px 1px 4px -1px rgba(0, 0, 0, 0.25);
           color: #ffffff $imp;
         }
       }
@@ -591,24 +612,24 @@
 
     > li {
       > a {
-        background: #f3f6fdb3;
-        border: 1px solid #d1d3d8;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
         display: block;
-        margin: 0px 15px 10px 15px;
-        padding: 8px 15px;
-        color: #666;
-        font-size: 14px;
+        margin: 0px 14px 8px 14px;
+        padding: 9px 14px;
+        color: #475569;
+        font-size: 13px;
         font-weight: 600;
         text-decoration: none;
-        border-radius: 5px;
-        transition: all 0.2s ease-in-out;
+        border-radius: $radius-md;
+        transition: all $transition-fast;
 
         .sub-menu-arrow {
           float: right;
           margin: 3px 0px;
-          font-size: 16px;
-          color: #aaa;
-          transition: all 0.2s ease-in-out;
+          font-size: 14px;
+          color: #94a3b8;
+          transition: all $transition-fast;
         }
 
         &:hover {
@@ -622,7 +643,7 @@
       }
 
       > ul {
-        margin: 0px 0px 15px 0px;
+        margin: 0px 0px 12px 0px;
         padding: 0px;
         display: none;
 
@@ -631,8 +652,8 @@
 
           > a {
             padding: 0px;
-            margin: 0px 15px 5px 30px;
-            transition: all 0.2s ease-in-out;
+            margin: 0px 14px 4px 28px;
+            transition: all $transition-fast;
             height: auto;
             line-height: initial;
             white-space: nowrap;
@@ -641,19 +662,25 @@
             max-width: 100%;
             display: block;
             text-decoration: none;
+            font-size: 13px;
+            color: #64748b;
 
             &:before {
               display: inline-block;
-              content: '-';
-              font-weight: 400;
-              margin: 0px 6px 0px 0px;
-              transition: all 0.2s ease-in-out;
+              content: '';
+              width: 4px;
+              height: 4px;
+              background: #cbd5e1;
+              border-radius: 50%;
+              margin: 0px 8px 2px 0px;
+              transition: all $transition-fast;
             }
 
             &:hover {
               color: var(--primary);
 
               &:before {
+                background: var(--primary);
                 margin-right: 12px;
               }
             }
@@ -695,7 +722,7 @@
     background: transparent;
     border: 0px;
     margin: 15px 10px 5px 10px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--primary);
     outline: none $imp;

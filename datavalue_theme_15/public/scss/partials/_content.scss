@@ -3,7 +3,7 @@
   margin: 0px;
 
   .dv-app-content {
-    padding: 74px 20px 0;
+    padding: 74px 24px 0;
     margin-left: 340px;
   }
 
@@ -16,9 +16,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(34, 41, 47, 0.5);
+    background-color: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(4px);
     cursor: pointer;
-    transition: all 0.7s, z-index 0s;
+    transition: opacity 0.3s ease, z-index 0s;
     z-index: -1;
   }
 

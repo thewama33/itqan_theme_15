@@ -1,5 +1,6 @@
 .dv-navbar-overlay {
-  background: #f9fafa;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
   width: 100%;
   height: 72px;
   position: fixed;
@@ -12,9 +13,10 @@
 }
 
 .dv-navbar {
-  background: #fff;
-  border-bottom: 1px solid #e6e6e6;
-  //box-shadow: var(--card-shadow);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   width: inherit;
   height: 60px;
   position: fixed;
@@ -50,10 +52,10 @@
 
             .avatar-status-online {
               display: block;
-              background: #3cd090;
+              background: #22c55e;
               border: 2px solid #ffffff;
-              width: 12px;
-              height: 12px;
+              width: 11px;
+              height: 11px;
               position: absolute;
               right: 15px;
               bottom: 5px;
@@ -71,15 +73,16 @@
 
                 &.user-name {
                   font-weight: 600;
-                  font-size: 16px;
-                  color: #2490ef;
+                  font-size: 14px;
+                  color: #1e293b;
                   line-height: 16px;
                   margin-top: 2px;
                 }
 
                 &.user-status {
-                  font-size: 12px;
-                  color: #666666;
+                  font-size: 11px;
+                  color: #64748b;
+                  margin-top: 2px;
                 }
 
               }
@@ -91,10 +94,12 @@
           }
 
           .dropdown-menu {
-            box-shadow: 0px 1px 4px rgba(17, 43, 66, 0.10), 0px 2px 6px rgba(17, 43, 66, 0.08) $imp;
-            border: none;
-            min-width: 150px;
-            margin-top: -3px;
+            box-shadow: $shadow-xl;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: $radius-lg;
+            min-width: 180px;
+            margin-top: 4px;
+            padding: 6px;
           }
         }
 
@@ -102,21 +107,23 @@
           > a {
             display: block;
             padding: 0;
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
+            width: 34px;
+            height: 34px;
+            line-height: 34px;
             text-align: center;
-            margin-top: 10px;
-            font-size: 21px;
+            margin-top: 8px;
+            font-size: 18px;
             font-weight: 400;
-            color: #555 $imp;
-            transition: all 0.1s ease-in-out;
+            color: #475569 $imp;
+            border-radius: $radius-md;
+            transition: all $transition-fast;
 
             &:after {
               display: none $imp;
             }
 
             &:hover {
+              background: rgba(0, 0, 0, 0.04);
               color: var(--primary) $imp;
             }
           }
@@ -133,17 +140,19 @@
             box-shadow: none $imp;
             display: block;
             padding: 0;
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
+            width: 34px;
+            height: 34px;
+            line-height: 34px;
             text-align: center;
-            margin-top: 10px;
-            font-size: 19px;
+            margin-top: 8px;
+            font-size: 17px;
             font-weight: 400;
-            color: #555 $imp;
-            transition: all 0.1s ease-in-out;
+            color: #475569 $imp;
+            border-radius: $radius-md;
+            transition: all $transition-fast;
 
             &:hover {
+              background: rgba(0, 0, 0, 0.04);
               color: var(--primary) $imp;
             }
           }
@@ -160,17 +169,18 @@
             box-shadow: none $imp;
             display: block;
             padding: 0;
-            height: 30px;
-            line-height: 30px;
+            height: 34px;
+            line-height: 34px;
             text-align: center;
-            margin-top: 10px;
-            font-size: 16px;
-            font-weight: 400;
-            color: #555 $imp;
-            transition: all 0.1s ease-in-out;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #475569 $imp;
+            border-radius: $radius-md;
+            transition: all $transition-fast;
 
             .dv-lang-flag {
-              background: #eee;
+              background: #e2e8f0;
               background-size: 100% 100% $imp;
               display: block;
               float: left;
@@ -191,20 +201,23 @@
           }
 
           .dropdown-menu {
-            box-shadow: 0px 1px 4px rgba(17, 43, 66, 0.10), 0px 2px 6px rgba(17, 43, 66, 0.08) $imp;
-            border: none;
-            margin-top: 10px;
-            width: 100px;
-            min-width: 100px;
+            box-shadow: $shadow-xl;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: $radius-lg;
+            margin-top: 8px;
+            width: 110px;
+            min-width: 110px;
+            padding: 6px;
 
             .dropdown-item {
-              font-size: 14px;
-              font-weight: 400;
-              padding: 5px 10px;
-              transition: all 0.2s ease-in-out;
+              font-size: 13px;
+              font-weight: 500;
+              padding: 6px 10px;
+              border-radius: $radius-sm;
+              transition: all $transition-fast;
 
               .dv-lang-flag {
-                background: #eee;
+                background: #e2e8f0;
                 background-size: 100% 100% $imp;
                 display: block;
                 float: left;
@@ -242,13 +255,15 @@
       width: 46px;
       text-align: center;
       line-height: 49px;
-      font-size: 21px;
+      font-size: 20px;
       padding: 0;
-      color: var(--blue-900);
-      transition: all 0.2s ease-in;
+      color: #334155;
+      border-radius: $radius-md;
+      transition: all $transition-fast;
 
       &:hover {
-        color: var(--blue-600);
+        background: rgba(0, 0, 0, 0.04);
+        color: var(--primary);
       }
     }
 
@@ -261,13 +276,15 @@
       width: 40px;
       text-align: center;
       line-height: 49px;
-      font-size: 25px;
+      font-size: 22px;
       padding: 0;
-      color: #4b84a0;
-      transition: all 0.2s ease-in;
+      color: #334155;
+      border-radius: $radius-md;
+      transition: all $transition-fast;
       display: none;
 
       &:hover {
+        background: rgba(0, 0, 0, 0.04);
         color: var(--primary);
       }
     }
@@ -304,7 +321,7 @@
       margin-left: 0;
       position: relative;
       left: 75px;
-      transition: all 0.2s ease-in-out;
+      transition: all $transition-base;
 
       .navbar-nav {
         flex-direction: row;
@@ -314,9 +331,10 @@
 
         > li {
           > a {
-            font-size: 16px $imp;
+            font-size: 15px $imp;
             font-weight: 600;
             text-decoration: none $imp;
+            color: #334155;
 
             &:before {
               position: relative;
@@ -339,33 +357,41 @@
 
   .dv-nav-search {
     float: right;
-    width: 310px;
+    width: 280px;
     height: 40px;
     margin: 12px 10px;
     position: relative;
 
     .form-control {
-      background: #f9fafa;
-      border: 1px solid #ddd;
+      background: #f1f5f9;
+      border: 1px solid transparent;
       box-shadow: none $imp;
-      height: 35px;
-      padding-left: 30px;
-      font-size: 14px;
+      height: 36px;
+      padding-left: 34px;
+      font-size: 13px;
+      border-radius: $radius-lg;
+      transition: all $transition-fast;
+
+      &:focus {
+        background: #ffffff;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) $imp;
+      }
     }
 
     .search-icon {
       position: absolute;
-      top: 8px;
+      top: 9px;
       left: 13px;
-      font-size: 14px;
-      color: #666;
+      font-size: 13px;
+      color: #94a3b8;
     }
 
     .dv-nav-search-close {
       background: transparent;
       border: 0px;
       font-size: 19px;
-      color: #666;
+      color: #64748b;
       position: absolute;
       top: 15px;
       right: 17px;
@@ -376,11 +402,13 @@
 
     .awesomplete > ul {
       margin-top: 6px;
+      border-radius: $radius-lg;
+      box-shadow: $shadow-xl;
     }
   }
 
   .dropdown-menu {
-    animation-duration: 0.3s;
+    animation-duration: 0.2s;
     animation-fill-mode: both;
     animation-name: slideIn;
   }

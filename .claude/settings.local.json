@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/omar/Desktop/ERP/frappe-15/**)",
+      "Bash(bench build:*)",
+      "Bash(git remote:*)"
+    ]
+  }
+}

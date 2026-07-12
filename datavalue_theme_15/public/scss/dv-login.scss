@@ -1,16 +1,16 @@
 $imp: !important;
-$my_color: #007BFF;
-$my_color_hover: #0065cd;
+$my_color: #2563eb;
+$my_color_hover: #1d4ed8;
 
 :root {
-  --primary: #007BFF;
+  --primary: #2563eb;
 }
 
 a {
-  color: #007BFF;
+  color: #2563eb;
 
   &:hover {
-    color: #0065cd;
+    color: #1d4ed8;
   }
 }
 
@@ -23,28 +23,31 @@ a {
 #page-login .page-card {
   max-width: 1024px !important;
   display: flex;
+  border-radius: 20px;
+  overflow: hidden;
 
   .text-center.sign-up-message {
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
     position: relative;
     top: 15px;
+    color: #64748b;
   }
 
   .login-content-bg {
-    background: #f3f8fa;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
     width: 50%;
     margin: -20px 20px -20px -20px;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 20px 0px 0px 20px;
     position: relative;
 
     .app-logo {
       max-height: 40px;
-      margin: 20px;
+      margin: 24px;
     }
 
     img.app-login-bg {
-      width: 90%;
+      width: 85%;
       margin: 50px auto;
       display: block;
     }
@@ -52,24 +55,34 @@ a {
     .login-copyrights {
       position: absolute;
       bottom: 20px;
-      font-weight: 600;
-      font-size: 13px;
+      font-weight: 500;
+      font-size: 12px;
       left: 0px;
       right: 0px;
       text-align: center;
+      color: #64748b;
     }
   }
 
   .login-content-form {
     width: 50%;
-    padding: 50px 20px;
+    padding: 50px 24px;
 
     .btn-login, .btn-signup, .btn-forgot {
-      background: rgb(0, 123, 255);
-      background: linear-gradient(-90deg, rgba(0, 123, 255, 1) 0%, rgba(0, 101, 205, 1) 100%);
-      height: 50px !important;
-      border-radius: 25px !important;
-      font-size: 16px;
+      background: $my_color;
+      background: linear-gradient(135deg, $my_color 0%, $my_color_hover 100%);
+      height: 48px !important;
+      border-radius: 12px !important;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+      transition: all 0.2s ease;
+
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+      }
     }
 
     .forgot-password-message {
@@ -79,8 +92,8 @@ a {
     span.toggle-password.text-muted {
       top: 14px !important;
       right: 14px !important;
-      opacity: 0.7;
-      transition: all 0.2s ease-in-out;
+      opacity: 0.6;
+      transition: all 0.15s ease;
 
       &:hover {
         opacity: 1;
@@ -97,27 +110,35 @@ a {
 .for-login .page-card, .for-forgot .page-card, .for-signup .page-card, .for-email-login .page-card {
   max-width: 480px;
   padding: 20px;
-  box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.10);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
 }
 
 .for-login .page-card-head img, .for-forgot .page-card-head img, .for-signup .page-card-head img, .for-email-login .page-card-head img {
-  max-height: 62px;
-  margin-bottom: 40px;
+  max-height: 56px;
+  margin-bottom: 32px;
 }
 
 .form-label {
   cursor: pointer;
+  font-weight: 500;
+  font-size: 13px;
+  color: #334155;
 }
 
 #page-login .form-control {
-  background: #ffffff $imp;
-  border: 1px solid #D8D6DE $imp;
-  height: 50px $imp;
+  background: #f8fafc $imp;
+  border: 1px solid #e2e8f0 $imp;
+  height: 48px $imp;
   padding-left: 40px;
-  transition: all 0.2s ease-in-out;
+  border-radius: 12px;
+  font-size: 14px;
+  transition: all 0.15s ease;
 
   &:focus.is-valid, &:focus {
-    box-shadow: 0 3px 10px 0 rgba(37, 143, 231, 0.25) $imp;
+    background: #ffffff $imp;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) $imp;
     border-color: $my_color $imp;
     padding-left: 43px;
     outline: 0;
@@ -125,7 +146,8 @@ a {
 }
 
 .for-login .page-card .page-card-body .forgot-password-message > *, .for-forgot .page-card .page-card-body .forgot-password-message > *, .for-signup .page-card .page-card-body .forgot-password-message > *, .for-email-login .page-card .page-card-body .forgot-password-message > * {
-  font-size: 14px;
+  font-size: 13px;
+  color: #64748b;
 
   &:hover {
     color: $my_color;
@@ -136,10 +158,12 @@ a {
   h2 {
     margin-top: 0;
     font-weight: 700;
+    color: #0f172a;
+    font-size: 24px;
   }
 
   .page_content {
-    background-color: #f5f5f5;
+    background-color: #f4f6f9;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -171,11 +195,12 @@ a {
           width: 100%;
           max-width: initial;
           display: block;
+          object-fit: cover;
         }
       }
 
       &:after {
-        background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.9) 100%) repeat scroll 0 0;
+        background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.7) 100%) repeat scroll 0 0;
         position: absolute;
         top: 0px;
         left: 0px;
@@ -205,20 +230,24 @@ a {
       }
 
       .page-card {
-        padding-top: 45px $imp;
-        padding-bottom: 45px $imp;
-        background-color: rgba(255, 255, 255, 0.75) $imp;
-        border: 2px solid rgba(255, 255, 255, 0.75) $imp;
-        box-shadow: 0px 2px 14px -6px #000 $imp;
+        padding-top: 40px $imp;
+        padding-bottom: 40px $imp;
+        background-color: rgba(255, 255, 255, 0.8) $imp;
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.6) $imp;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) $imp;
         color: #000000 $imp;
         position: relative;
         z-index: 315;
 
         .form-control {
-          border: 1px solid #8d8d8d $imp;
+          border: 1px solid rgba(0, 0, 0, 0.15) $imp;
+          background: rgba(255, 255, 255, 0.9) $imp;
 
           &:focus {
             border-color: var(--primary) $imp;
+            background: #ffffff $imp;
           }
         }
 
@@ -232,7 +261,8 @@ a {
 
 .for-email-login .page-card .page-card-body .field-icon, .for-forgot .page-card .page-card-body .field-icon, .for-login .page-card .page-card-body .field-icon, .for-signup .page-card .page-card-body .field-icon {
   left: 14px;
-  top: 15px;
+  top: 14px;
+  color: #94a3b8;
 }
 
 @media (max-width: 600px) {
@@ -244,7 +274,7 @@ a {
   }
   #page-login {
     .for-login, .for-forgot, .for-signup, .for-email-login {
-      padding: 30px $imp;
+      padding: 20px $imp;
     }
   }
   #page-login .page-card .login-content-bg {

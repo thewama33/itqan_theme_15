@@ -3,46 +3,48 @@
 
   .workspace-tabs {
     background-color: #ffffff;
-    border: 1px solid #dddddd;
+    border: 1px solid #e2e8f0;
     min-height: 40px;
-    margin-bottom: 30px;
-    border-radius: 8px;
+    margin-bottom: 24px;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
 
     > ul {
       margin: 0px;
-      padding: 15px;
+      padding: 12px;
       width: 100%;
       list-style: none;
       display: flex;
-      overflow-x: auto; /* Enable horizontal scrollbar */
-      white-space: nowrap; /* Prevent items from wrapping */
+      overflow-x: auto;
+      white-space: nowrap;
+      gap: 6px;
 
       > li {
         flex: 0 0 auto;
-        margin-right: 10px;
 
         > a {
           background: transparent;
           display: block;
-          height: 40px;
-          line-height: 40px;
-          padding: 0px 15px;
-          font-size: 18px;
+          height: 38px;
+          line-height: 38px;
+          padding: 0px 16px;
+          font-size: 14px;
           font-weight: 600;
-          color: #666666;
-          border-radius: 7px;
-          transition: all 0.2s ease-in-out;
+          color: #64748b;
+          border-radius: $radius-md;
+          transition: all $transition-fast;
 
           &:hover {
-            background: #eeeeee;
-            color: #333333;
+            background: #f1f5f9;
+            color: #334155;
           }
         }
 
         &.active {
           > a {
-            background: $my_color;
+            background: var(--primary);
             color: #ffffff;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
           }
         }
       }
@@ -50,24 +52,25 @@
   }
 
   .workplace-card-block {
-    background: #fffcf8;
-    border: 1px solid #c49b6c;
-    box-shadow: 0px 1px 10px -2px #0000001f;
-    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: $shadow-sm;
+    border-radius: $radius-lg;
 
     .workplace-card-block-head {
-      background: #e9ccab;
-      border-bottom: 1px solid #c49b6c;
-      border-radius: 7px 7px 0px 0px;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+      border-radius: $radius-lg $radius-lg 0px 0px;
       margin: 0px;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 700;
-      color: #000000;
-      padding: 10px 15px;
+      color: #1e293b;
+      padding: 12px 16px;
 
       > i {
         display: inline-block;
-        margin-right: 4px;
+        margin-right: 6px;
+        color: #64748b;
       }
 
       .workplace-notes-slider-nav, .workplace-action-slider-nav, .workplace-recent-activities-slider-nav, .workplace-todo-slider-nav, .workplace-todo-slider-nav {
@@ -75,27 +78,27 @@
         float: right;
 
         > button {
-          background: #f5f5f5;
-          border: 1px solid #dddddd;
-          height: 24px;
+          background: #ffffff;
+          border: 1px solid #e2e8f0;
+          height: 26px;
           width: 30px;
           padding: 0px;
-          font-size: 18px;
-          color: #888888;
-          line-height: 23px;
+          font-size: 14px;
+          color: #64748b;
+          line-height: 24px;
           text-align: center;
           outline: none;
-          border-radius: 5px;
-          transition: all 0.2s ease-in-out;
+          border-radius: $radius-sm;
+          transition: all $transition-fast;
 
           &:hover {
-            border-color: #aaaaaa;
-            color: #333333;
+            border-color: #cbd5e1;
+            color: #334155;
           }
 
           &.btn-new {
-            background: $my_color;
-            border-color: $my_color;
+            background: var(--primary);
+            border-color: var(--primary);
             color: #ffffff;
 
             &:hover {
@@ -107,7 +110,7 @@
     }
 
     .workplace-card-block-body {
-      padding: 15px;
+      padding: 16px;
 
       .workplace-calendar-container {
         position: relative;
@@ -117,7 +120,7 @@
       }
 
       .workplace-action-center {
-        margin: -15px;
+        margin: -16px;
         height: auto;
 
         ul {
@@ -125,34 +128,40 @@
           padding: 0px;
 
           > li {
-            border-bottom: 1px solid #dbdfea;
+            border-bottom: 1px solid #f1f5f9;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 15px;
+            padding: 14px 16px;
+            transition: background $transition-fast;
+
+            &:hover {
+              background: #f8fafc;
+            }
 
             > div.workplace-action-content {
               position: relative;
-              padding-left: 2.6rem;
+              padding-left: 2.4rem;
               padding-right: 0.5rem;
 
               > i {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 top: 2px;
                 left: 0;
                 position: absolute;
-                color: #8094ae;
+                color: #94a3b8;
               }
 
               > div {
-                font-size: 14px;
+                font-size: 13px;
                 font-weight: 600;
-                padding-bottom: 0.25rem
+                padding-bottom: 0.2rem;
+                color: #1e293b;
               }
 
               > p {
-                color: #8094ae;
-                font-size: 13px;
+                color: #94a3b8;
+                font-size: 12px;
                 line-height: 1.25rem;
                 height: 20px;
                 overflow: hidden;
@@ -163,7 +172,7 @@
                 -webkit-box-orient: vertical;
 
                 > b {
-                  color: $my_color;
+                  color: var(--primary);
                 }
               }
             }
@@ -171,18 +180,18 @@
             .btn.btn-icon {
               background: transparent;
               margin: 0px;
-              font-size: 35px;
-              width: 40px;
-              height: 40px;
-              line-height: 41px;
+              font-size: 28px;
+              width: 36px;
+              height: 36px;
+              line-height: 36px;
               padding: 0;
-              color: #999999;
-              border-radius: 100%;
-              transition: all 0.2s ease-in-out;
+              color: #cbd5e1;
+              border-radius: $radius-md;
+              transition: all $transition-fast;
 
               &:hover {
-                background: #eeeeee;
-                color: #444444;
+                background: #f1f5f9;
+                color: #475569;
               }
             }
 
@@ -194,24 +203,29 @@
       }
 
       .workplace-recent-activities {
-        margin: -15px;
+        margin: -16px;
 
         ul {
           margin: 0px;
           padding: 0px;
 
           > li {
-            border-bottom: 1px solid #dbdfea;
+            border-bottom: 1px solid #f1f5f9;
             display: block;
-            padding: 17px 15px;
+            padding: 14px 16px;
+            transition: background $transition-fast;
+
+            &:hover {
+              background: #f8fafc;
+            }
 
             > img {
-              background: #eeeeee;
+              background: #f1f5f9;
               display: block;
-              width: 45px;
-              height: 45px;
+              width: 40px;
+              height: 40px;
               float: left;
-              margin-right: 15px;
+              margin-right: 12px;
               border-radius: 50%;
             }
 
@@ -219,23 +233,23 @@
               margin: 0px;
 
               > div.title {
-                font-size: 14px;
+                font-size: 13px;
                 font-weight: 700;
-                color: $my_color;
-                padding-bottom: 0.25rem;
+                color: #1e293b;
+                padding-bottom: 0.2rem;
 
                 > span {
-                  color: $my_color;
-                  font-size: 12px;
-                  font-weight: 600;
+                  color: #94a3b8;
+                  font-size: 11px;
+                  font-weight: 500;
                   display: block;
                   float: right;
                 }
               }
 
               > p {
-                color: #666666;
-                font-size: 13px;
+                color: #64748b;
+                font-size: 12px;
                 line-height: 1.25rem;
                 height: 20px;
                 overflow: hidden;
@@ -261,26 +275,29 @@
 
         .workplace-notes-slider {
           > .workplace-notes-slider-item {
-            background: #f5f5f5;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 6px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 14px;
+            margin-bottom: 10px;
+            border-radius: $radius-md;
 
             h4 {
-              font-size: 18px;
+              font-size: 15px;
               font-weight: 700;
               margin: 0px;
+              color: #1e293b;
             }
 
             span {
               display: block;
-              font-size: 13px;
-              color: #888888;
-              margin: 14px 0px;
+              font-size: 12px;
+              color: #94a3b8;
+              margin: 10px 0px;
             }
 
             p {
-              color: #666666;
+              color: #64748b;
+              font-size: 13px;
             }
           }
         }
@@ -292,44 +309,52 @@
 
         .workplace-todo-widget {
           background: #ffffff;
-          box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.25);
+          box-shadow: $shadow-sm;
           height: 95px;
-          border: 1px solid #dddddd;
-          border-left: 4px solid #aaaaaa;
-          margin-bottom: 15px;
-          padding: 15px;
+          border: 1px solid #e2e8f0;
+          border-left: 3px solid #94a3b8;
+          margin-bottom: 10px;
+          padding: 12px 14px;
           position: relative;
           overflow: hidden;
+          border-radius: 0 $radius-md $radius-md 0;
+          transition: all $transition-fast;
+
+          &:hover {
+            box-shadow: $shadow-md;
+          }
 
           h4 {
             margin: 0px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
+            color: #1e293b;
 
             .todo-actions {
               margin-left: auto;
 
               .btn {
-                font-size: 12px;
+                font-size: 11px;
                 padding: 2px 8px;
                 margin-left: 4px;
+                border-radius: $radius-sm;
 
                 &.btn-close {
-                  background: #fc7730;
+                  background: #f97316;
                   color: #fff;
-                  transition: all 0.2s ease-in-out;
+                  transition: all $transition-fast;
 
                   &:hover, &:active {
-                    background: #d05c1f;
+                    background: #ea580c;
                   }
                 }
 
                 &.btn-cancel {
-                  background: #e83b3b;
+                  background: #ef4444;
                   color: #fff;
 
                   &:hover, &:active {
-                    background: #b02929;
+                    background: #dc2626;
                   }
                 }
               }
@@ -337,37 +362,42 @@
           }
 
           p {
-            margin: 6px 0px 0px 0px;
+            margin: 5px 0px 0px 0px;
+            font-size: 12px;
+            color: #64748b;
           }
 
           .todo-created-by {
-            margin: 5px 0px 0px 0px;
-            font-size: 12px;
+            margin: 4px 0px 0px 0px;
+            font-size: 11px;
             font-weight: 600;
-            color: #777777;
+            color: #94a3b8;
           }
 
           .todo-status {
             background: transparent;
-            border: 1px solid #aaaaaa;
+            border: 1px solid #e2e8f0;
             width: auto;
             height: 20px;
             line-height: 18px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
-            color: #333c44;
-            padding: 0px 10px;
+            color: #475569;
+            padding: 0px 8px;
             display: inline-block;
             margin-left: 8px;
-            border-radius: 4px;
+            border-radius: $radius-sm;
 
             &.todo-status-Open {
-              border-color: #9dce9d;
-              color: #5a9d5a;
+              border-color: #86efac;
+              color: #16a34a;
+              background: #f0fdf4;
             }
 
             &.todo-status-Closed {
-              background: #cc6666;
+              background: #fef2f2;
+              border-color: #fca5a5;
+              color: #dc2626;
             }
           }
 
@@ -375,8 +405,8 @@
             width: auto;
             height: 20px;
             line-height: 20px;
-            font-size: 12px;
-            color: #336699;
+            font-size: 11px;
+            color: #64748b;
             font-weight: 600;
             padding: 0px;
             display: block;
@@ -386,15 +416,15 @@
           }
 
           &.todo-priority-High {
-            border-left-color: #cc6666;
+            border-left-color: #ef4444;
           }
 
           &.todo-priority-Medium {
-            border-left-color: #ff9d3a;
+            border-left-color: #f97316;
           }
 
           &.todo-priority-Low {
-            border-left-color: #9dce9d;
+            border-left-color: #22c55e;
           }
         }
       }
@@ -408,38 +438,40 @@
       position: relative;
       top: 8px;
       font-weight: 600;
-      font-size: 14px;
-      color: #666;
+      font-size: 13px;
+      color: #64748b;
     }
 
     .simple-calendar-btn {
-      background: #e9ccab;
-      border: 1px solid #c49b6c;
-      color: #000000;
-      border-radius: 7px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      border-radius: $radius-md;
+      transition: all $transition-fast;
 
       &:hover {
-        background: $my_color;
+        background: var(--primary);
+        border-color: var(--primary);
         color: #ffffff;
       }
     }
   }
 
   .day {
-    width: 40px $imp;
-    height: 40px $imp;
-    line-height: 40px $imp;
-    font-size: 18px $imp;
+    width: 38px $imp;
+    height: 38px $imp;
+    line-height: 38px $imp;
+    font-size: 14px $imp;
     font-weight: 600 $imp;
-    border-radius: 7px $imp;
+    border-radius: $radius-md $imp;
 
     &.today {
-      border: 3px solid $my_color_hover;
-      line-height: 33px $imp;
+      border: 2px solid var(--primary);
+      line-height: 34px $imp;
     }
 
     &.has-event {
-      background: $my_color;
+      background: var(--primary);
 
       &:hover {
         background: $my_color_hover;
