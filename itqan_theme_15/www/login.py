@@ -38,7 +38,7 @@ def get_context(context):
     context["title"] = "Login"
     context["provider_logins"] = []
     context["disable_signup"] = frappe.utils.cint(frappe.db.get_single_value("Website Settings", "disable_signup"))
-    context["logo"] = (frappe.db.get_single_value('Theme Settings', 'login_page_logo') or '/assets/datavalue_theme_15/images/datavalue-new-logo.svg')
+    context["logo"] = (frappe.db.get_single_value('Theme Settings', 'login_page_logo') or '/assets/itqan_theme_15/images/itqan-new-logo.svg')
     context["app_name"] = (frappe.db.get_single_value('Website Settings', 'app_name') or frappe.get_system_settings("app_name") or _("Frappe"))
     providers = [i.name for i in frappe.get_all("Social Login Key", filters={"enable_social_login": 1}, order_by="name")]
     for provider in providers:

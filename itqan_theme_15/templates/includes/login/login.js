@@ -1,7 +1,7 @@
 // login.js
 // don't remove this line (used in test)
 //
-// Data Value Theme
+// Itqan Theme
 // By: Abdo Hamoud
 // www.abdo-host.com
 //

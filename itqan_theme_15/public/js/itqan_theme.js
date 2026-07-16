@@ -1,5 +1,5 @@
 /*
-* Data Value Custom Scripts
+* Itqan Custom Scripts
 */
 
 (function ($) {
@@ -88,7 +88,7 @@
             let selected_flag = $this.find(".dv-lang-flag").attr("class");
             $("#header-navbar-change-lang .dropdown-lang-link").html(`<span class="${selected_flag}"></span> ${language}`);
             frappe.call({
-                method: "datavalue_theme_15.api.change_language",
+                method: "itqan_theme_15.api.change_language",
                 args: {
                     language: language.toLowerCase()
                 },
@@ -176,7 +176,7 @@
             return;
 
         let AppLogoVM = new Vue({
-            el: '#datavalue-app-logo',
+            el: '#itqan-app-logo',
             delimiters: ["[[", "]]"],
             data: {
                 logo_path: '',
@@ -186,13 +186,13 @@
             methods: {
                 get_company_logo: function () {
                     const $this = this;
-                    let logo = 'datavalue-new-logo.svg';
+                    let logo = 'itqan-new-logo.svg';
                     if ($('html').attr('data-theme-mode') == 'dark') {
-                        logo = 'datavalue-new-logo-light.svg';
+                        logo = 'itqan-new-logo-light.svg';
                     }
                     frappe.call({
                         type: 'POST',
-                        method: 'datavalue_theme_15.api.get_company_logo',
+                        method: 'itqan_theme_15.api.get_company_logo',
                         args: {},
                         callback: async function (response) {
                             if (response.message && response.message.length) {
@@ -200,23 +200,23 @@
                                 $this.logo_class = 'has-company-logo';
                             } else {
                                 $this.logo_class = '';
-                                $this.logo_path = `/assets/datavalue_theme_15/images/${logo}`;
+                                $this.logo_path = `/assets/itqan_theme_15/images/${logo}`;
                             }
                         }
                     });
                 }
             },
             async mounted() {
-                let logo = 'datavalue-new-logo.svg';
+                let logo = 'itqan-new-logo.svg';
                 if ($('html').attr('data-theme-mode') == 'dark') {
-                    logo = 'datavalue-new-logo-light.svg';
+                    logo = 'itqan-new-logo-light.svg';
                 }
                 if (frappe.theme_settings && frappe.theme_settings.theme_logo && frappe.theme_settings.theme_logo.length) {
                     this.logo_path = frappe.theme_settings.theme_logo;
                     this.logo_class = 'has-company-logo';
                 } else {
                     this.logo_class = '';
-                    this.logo_path = `/assets/datavalue_theme_15/images/${logo}`;
+                    this.logo_path = `/assets/itqan_theme_15/images/${logo}`;
                 }
             },
             created: function () {
@@ -267,7 +267,7 @@
                 get_current_language: function () {
                     const $this = this;
                     frappe.call({
-                        method: "datavalue_theme_15.api.get_current_language",
+                        method: "itqan_theme_15.api.get_current_language",
                         args: {},
                         callback: function (response) {
                             if (response && response.message && response.message) {

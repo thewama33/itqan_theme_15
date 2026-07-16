@@ -4,35 +4,35 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Datavalue Theme 15 is a custom Frappe 15 theme app that replaces the default Frappe desk UI with a side-menu layout, custom navbar, configurable color themes, custom login page, and additional UI plugins. It runs as a standard Frappe app managed by `bench`.
+Itqan Theme 15 is a custom Frappe 15 theme app that replaces the default Frappe desk UI with a side-menu layout, custom navbar, configurable color themes, custom login page, and additional UI plugins. It runs as a standard Frappe app managed by `bench`.
 
 ## Commands
 
 ```bash
 # Install the app on a site
-bench --site <site-name> install-app datavalue_theme_15
+bench --site <site-name> install-app itqan_theme_15
 
 # Build assets (CSS/JS bundles)
-bench build --app datavalue_theme_15
+bench build --app itqan_theme_15
 
 # Watch for changes during development
-bench watch --app datavalue_theme_15
+bench watch --app itqan_theme_15
 
 # Run the development server
 bench start
 
 # Run tests
-bench --site <site-name> run-tests --app datavalue_theme_15
+bench --site <site-name> run-tests --app itqan_theme_15
 
 # Run a single test
-bench --site <site-name> run-tests --module datavalue_theme_15.datavalue_theme_15.doctype.theme_settings.test_theme_settings
+bench --site <site-name> run-tests --module itqan_theme_15.itqan_theme_15.doctype.theme_settings.test_theme_settings
 ```
 
 ## Architecture
 
 ### App Structure
 
-The inner `datavalue_theme_15/` directory is the Python package. Key paths:
+The inner `itqan_theme_15/` directory is the Python package. Key paths:
 
 - **`hooks.py`** — Registers CSS/JS includes, website context (favicon, splash image), and web page assets. This is the main configuration entry point for the Frappe app.
 - **`api.py`** — Whitelisted API endpoints: `get_theme_settings` (guest-accessible), `change_language`, `get_company_logo`, `update_theme_settings`, `get_events`, `update_menu_modules`.
@@ -46,12 +46,12 @@ The inner `datavalue_theme_15/` directory is the Python package. Key paths:
 
 ### Frontend
 
-- **`public/js/datavalue_theme.js`** — Main desk-side JS. Uses jQuery and Vue 2 instances (not SFCs) for navbar components (logo, user info, language switcher). Handles side-menu toggling, fullscreen, search, and module navigation.
-- **`public/js/datavalue_theme.app.min.js`** — Minified app JS bundle included in desk.
-- **`public/js/datavalue_theme.web.min.js`** — Minified JS for web (login) pages.
+- **`public/js/itqan_theme.js`** — Main desk-side JS. Uses jQuery and Vue 2 instances (not SFCs) for navbar components (logo, user info, language switcher). Handles side-menu toggling, fullscreen, search, and module navigation.
+- **`public/js/itqan_theme.app.min.js`** — Minified app JS bundle included in desk.
+- **`public/js/itqan_theme.web.min.js`** — Minified JS for web (login) pages.
 - **`public/scss/`** — SCSS source files:
-  - `datavalue_theme.bundle.scss` — Main bundle entry point (built by Frappe's asset bundler)
-  - `datavalue_theme.scss` — Core styles
+  - `itqan_theme.bundle.scss` — Main bundle entry point (built by Frappe's asset bundler)
+  - `itqan_theme.scss` — Core styles
   - `partials/` — Modular SCSS: `_header`, `_side-menu`, `_body`, `_content`, `_forms-ui`, `_grid`, `_workspace`, `_rtl`, `_mobile`, `_responsive`, `_dark-style`, and per-color theme files (`_green-style`, `_red-style`, `_orange-style`, `_yellow-style`, `_pink-style`, `_violet-style`)
 - **`public/plugins/`** — Third-party jQuery/CSS plugins (nicescroll, owl-carousel, tooltip, fontawesome, animate.css, etc.)
 

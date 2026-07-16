@@ -22,7 +22,7 @@
   "loading_image",
   "font_style_section",
   "font_family",
-  "data_value_theme_installed",
+  "itqan_theme_installed",
   "side_menu_section",
   "open_workspace_on_mobile_menu",
   "show_icon_label",
@@ -223,17 +223,17 @@
   },
   {
    "default": "0",
-   "fieldname": "data_value_theme_installed",
+   "fieldname": "itqan_theme_installed",
    "fieldtype": "Check",
    "hidden": 1,
-   "label": "Data Value Theme Installed"
+   "label": "Itqan Theme Installed"
   }
  ],
  "issingle": 1,
  "links": [],
  "modified": "2024-05-30 15:53:15.474962",
  "modified_by": "Administrator",
- "module": "Datavalue Theme 15",
+ "module": "Itqan Theme 15",
  "name": "Theme Settings",
  "owner": "Administrator",
  "permissions": [
