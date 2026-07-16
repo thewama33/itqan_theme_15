@@ -5,11 +5,11 @@
 tags
 node_modules
 itqan_theme_15/public/node_modules
-itqan_theme_15/public/dist
 itqan_theme_15/public/js/vue
 itqan_theme_15/public/js/frappe
 itqan_theme_15/public/js/itqan_theme.bundle.js
 itqan_theme_15/public/js/itqan_theme_web.bundle.js
 __pycache__
+.sass-cache
 .claude/
 .claude/settings.local.json
