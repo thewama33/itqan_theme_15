@@ -11,3 +11,4 @@ datavalue_theme_15/public/js/frappe
 datavalue_theme_15/public/js/datavalue_theme.bundle.js
 datavalue_theme_15/public/js/datavalue_theme_web.bundle.js
 __pycache__
+.claude/

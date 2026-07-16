@@ -12,7 +12,7 @@ app_license = "mit"
 # ------------------
 
 website_context = {
-    "favicon": "/assets/datavalue_theme_15/images/datavlue-new-icon-xs.png",
+    "favicon": "/assets/datavalue_theme_15/images/favicon-package/favicon-96x96.png",
     "splash_image": "/assets/datavalue_theme_15/images/theme_splash_empty.jpg"
 }
 
